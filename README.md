@@ -1,73 +1,54 @@
-# React + TypeScript + Vite
+# 🦆 鸭口脱险 (Duck's Escape: Tactical Bread)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+一款融合了 **搜打撤 (Extraction Shooter)** 核心逻辑与 **肉鸽割草 (Roguelike/Vampire Survivors)** 升级机制的 2D 顶视角射击游戏。
 
-Currently, two official plugins are available:
+## 🌟 游戏特色
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **战术搜寻 (Search)**：在广阔的池塘地图中搜索“黄金面包屑”，它们是你通关的门票，也是基地的硬通货。
+- **激烈战斗 (Fight)**：使用水炮击退不断袭来的鹅群。击杀敌人获得经验值（XP），在升级时选择强力的随机技能。
+- **极限撤离 (Extract)**：集齐 5 个面包后触发撤离点，你必须在 60 秒倒计时内穿越重重包围到达绿色撤离区。
+- **局外成长 (Meta-Progression)**：成功带出的面包可以在基地商店中永久强化鸭子的基础移速、初始弹药和攻击力。
+- **精英系统 (Elite System)**：小心紫色的精英大鹅，它们拥有更高的血量和更强的压迫感。
 
-## React Compiler
+## 🎮 操作说明
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| 按键 | 动作 |
+| :--- | :--- |
+| **W / A / S / D** | 鸭子移动 |
+| **鼠标左键** | 普通射击 (消耗弹药) |
+| **空格键 (Space)** | 释放特殊武器/技能 (需在局内通过升级获取) |
+| **鼠标移动** | 瞄准方向 |
 
-## Expanding the ESLint configuration
+## 🛠️ 技术实现
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **框架**: [React](https://react.dev/) + [Vite](https://vitejs.dev/)
+- **语言**: [TypeScript](https://www.typescriptlang.org/)
+- **渲染**: HTML5 Canvas (原生高性能渲染循环)
+- **物理**: 包含圆-矩形碰撞检测及自定义 AABB 逻辑，确保障碍物拦截有效。
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🚀 快速开始
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+1. **安装依赖**:
+   ```bash
+   npm install
+   ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+2. **启动开发服务器**:
+   ```bash
+   npm run dev
+   ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+3. **构建生产版本**:
+   ```bash
+   npm run build
+   ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📈 进阶玩法
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **前期**: 专注于击杀敌人拾取紫色经验球，尽早解锁“穿透弹药”或“急速射击”。
+- **中期**: 捡够 5 个面包后，观察绿色箭头的指向，判断撤离路线。
+- **危机时刻**: 灵活运用空格键的“巨型冲击波”或“水之新星”来清理近身的大规模鹅群。
+
+---
+
+*“在池塘里，不是你带走面包，就是大鹅带走你。”* 🦆💨
